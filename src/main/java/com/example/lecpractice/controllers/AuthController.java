@@ -32,6 +32,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
+
     public String login(@ModelAttribute AuthRequest authRequest, Model model) {
         UserInfo userInfo;
         userInfo = userRepository.findUserByUsername(authRequest.getUsername());
@@ -41,7 +42,8 @@ public class AuthController {
                 String token = jwtService.generateToken(userInfo.getName());
                 System.out.println("token = " + token);
                 model.addAttribute("token", token);
-                return "redirect:/weather";
+                return "successLoginForm";
+
             } else {
                 model.addAttribute("error", "Wrong password");
                 return "loginForm";

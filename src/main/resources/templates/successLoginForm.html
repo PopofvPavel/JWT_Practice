@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Your token</title>
 </head>
 <body>
-$END$
+<h1>Your Token:</h1>
+<p th:text="${token}"></p>
+<p>Now do get method with this token in Authorization header to: http://localhost:8080/weather</p>
+<!--<a href="http://localhost:8080/weather">Get Weather</a>-->
 </body>
 </html>
